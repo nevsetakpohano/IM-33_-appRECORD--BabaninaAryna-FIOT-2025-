@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="lab-container">
+        <div class="lab-header">
+            <a href="index.html" class="back-to-main">← На головну</a>
+            <div class="lab-title">
+                <h1>Лабораторна робота №1</h1>
+                <h2>Тема: ТЕГИ ТА АТРИБУТИ HTML-ДОКУМЕНТА. СТРУКТУРНА РОЗМІТКА. GIT.GITHUB. РОБОТА З РЕПОЗИТОРІЯМИ</h2>
+            </div>
+        </div>
+
+        <div class="lab-navigation">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#lab1-info">Тема, мета, розташування</a></li>
+                    <li><a href="#lab1-environment">Опис предметного середовища</a></li>
+                    <li><a href="#lab1-business">Опис бізнес-логіки</a></li>
+                    <li><a href="#lab1-webpage">Головна сторінка веб-застосунку</a></li>
+                    <li><a href="#lab1-code">Код головної сторінки</a></li>
+                    <li><a href="#lab1-tables">HTML-код таблиць</a></li>
+                    <li><a href="#lab1-images">HTML-код зображень</a></li>
+                    <li><a href="#lab1-lists">HTML-код списків</a></li>
+                    <li><a href="#lab1-forms">HTML-код форм</a></li>
+                    <li><a href="#lab1-conclusions">Висновки</a></li>
+                </ul>
+            </nav>
+
+            <main class="lab-content">
+                <section id="lab1-info" class="lab-section active">
+                    <h2 class="section-title">Тема, мета, місце розташування</h2>
+                    
+                    <div class="content-card">
+                        <h3>Тема</h3>
+                        <p>ТЕГИ ТА АТРИБУТИ HTML-ДОКУМЕНТА. СТРУКТУРНА РОЗМІТКА. GIT.GITHUB. РОБОТА З РЕПОЗИТОРІЯМИ. ОПИС ЛОГІКИ ВЛАСНОГО WEB-ЗАСТОСУНКУ.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Мета</h3>
+                        <p>Придбати практичні навички роботи з GitHub, репозиторіями, HTML-документом, таблицями, зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Місце розташування</h3>
+                        <div class="links-grid">
+                            <a href="https://github.com/nevsetakpohano/IM-33_appWEB-Babanina-Aryna-FIOT-2025" class="link-button">
+                                <strong>Репозиторій WEB-застосунку</strong>
+                                <small>BookShelf project</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_appWEB-Babanina-Aryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка WEB-застосунку</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                            
+                            <a href="https://github.com/nevsetakpohano/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-" class="link-button">
+                                <strong>Репозиторій звітного документу</strong>
+                                <small>Report website</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_-appRECORD--BabaninaAryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка звітного документу</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-environment" class="lab-section">
+                    <h2 class="section-title">Опис предметного середовища</h2>
+                    
+                    <div class="content-card">
+                        <h3>Проект "BookShelf"</h3>
+                        <p><strong>BookShelf</strong> — це веб-застосунок для ведення особистої цифрової бібліотеки.</p>
+                        
+                        <h4>Основні цілі проекту:</h4>
+                        <ul>
+                            <li>Створення зручного інструменту для каталогізації особистої колекції книг</li>
+                            <li>Надання можливості оцінювати та рецензувати прочитані книги</li>
+                            <li>Ведення статистики читання</li>
+                            <li>Допомога у виборі нових книг на основі вподобань</li>
+                        </ul>
+                        
+                        <h4>Цільова аудиторія:</h4>
+                        <ul>
+                            <li>Студенти та науковці</li>
+                            <li>Книгомани та колекціонери</li>
+                            <li>Люди, які хочуть відстежувати свій прогрес у читанні</li>
+                            <li>Бібліотеки та книжкові клуби</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="lab1-business" class="lab-section">
+                    <h2 class="section-title">Опис бізнес-логіки</h2>
+                    
+                    <div class="content-card">
+                        <h4>Функціональні вимоги</h4>
+                        <ol>
+                            <li>Керування книгами (додавання, редагування, видалення)</li>
+                            <li>Пошук та фільтрація за різними критеріями</li>
+                            <li>Статистика та аналітика бібліотеки</li>
+                        </ol>
+                        
+                        <h4>Нефункціональні вимоги</h4>
+                        <table>
+                            <tr>
+                                <th>Вимога</th>
+                                <th>Опис</th>
+                            </tr>
+                            <tr>
+                                <td>Продуктивність</td>
+                                <td>Завантаження сторінки &lt; 3 секунди</td>
+                            </tr>
+                            <tr>
+                                <td>Масштабованість</td>
+                                <td>Підтримка до 10 000 книг</td>
+                            </tr>
+                            <tr>
+                                <td>Використання</td>
+                                <td>Інтуїтивно зрозумілий інтерфейс</td>
+                            </tr>
+                            <tr>
+                                <td>Крос-платформеність</td>
+                                <td>Робота на ПК, планшетах, смартфонах</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="lab1-webpage" class="lab-section">
+                    <h2 class="section-title">Головна сторінка веб-застосунку</h2>
+                    
+                    <div class="content-card">
+                        <div class="screenshot-placeholder">
+                            <p><strong>Скріншот головної сторінки BookShelf</strong></p>
+                            <p>[Тут буде скріншот вашого веб-застосунку]</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-code" class="lab-section">
+                    <h2 class="section-title">Код головної сторінки веб-застосунку</h2>
+                    
+                    <div class="content-card">
+                        <h4>HTML-код файлу index.html:</h4>
+                        <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;BookShelf | Особиста цифрова бібліотека&lt;/title&gt;
+    &lt;!-- &lt;link rel="stylesheet" href="css/style.css"&gt; --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="app"&gt;
+        &lt;header id="header"&gt;
+            &lt;h1 id="app-title"&gt;BookShelf&lt;/h1&gt;
+            &lt;nav id="main-nav"&gt;
+                &lt;ul id="nav-list"&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;button data-page="library"&gt;Моя бібліотека&lt;/button&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;button data-page="add-book"&gt;Додати книгу&lt;/button&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;button data-page="search"&gt;Пошук&lt;/button&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a href="about.html" class="nav-link"&gt;Про проект&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;main id="main-content"&gt;
+            &lt;section id="library-section" class="page-section active"&gt;
+                &lt;h2 class="section-title"&gt;
+                    &lt;img src="pictures/books.svg" alt="Іконка бібліотеки" width="32" height="32" style="vertical-align: middle; margin-right: 3px;"&gt;
+                    Моя бібліотека
+                &lt;/h2&gt;
+                
+                &lt;div id="filters-container"&gt;
+                    &lt;form id="filter-form"&gt;
+                        &lt;input type="text" id="filter-search" placeholder="Фільтрувати книги..."&gt;
+                        &lt;select id="filter-genre"&gt;
+                            &lt;option value=""&gt;Всі жанри&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;button type="button" id="apply-filters"&gt;Застосувати&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+
+                &lt;div id="library-table-container"&gt;
+                    &lt;table id="books-table" border="1"&gt;
+                        &lt;thead id="table-header"&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;ID&lt;/th&gt;
+                                &lt;th&gt;Назва книги&lt;/th&gt;
+                                &lt;th&gt;Автор&lt;/th&gt;
+                                &lt;th&gt;Жанр&lt;/th&gt;
+                                &lt;th&gt;Рік&lt;/th&gt;
+                                &lt;th&gt;Дії&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody id="books-table-body"&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+
+                &lt;div id="stats-container"&gt;
+                    &lt;h3&gt;Статистика бібліотеки&lt;/h3&gt;
+                    &lt;ol id="stats-list"&gt;
+                        &lt;li&gt;Загальна кількість книг: 0&lt;/li&gt;
+                        &lt;li&gt;Кількість жанрів: 0&lt;/li&gt;
+                        &lt;li&gt;Найдавніша книга: -&lt;/li&gt;
+                        &lt;li&gt;Найновіша книга: -&lt;/li&gt;
+                    &lt;/ol&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+            &lt;section id="add-book-section" class="page-section"&gt;
+                &lt;h2 class="section-title"&gt;Додати нову книгу&lt;/h2&gt;
+                
+                &lt;form id="add-book-form"&gt;
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="book-title"&gt;Назва книги:&lt;/label&gt;
+                        &lt;input type="text" id="book-title" name="title" required&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="book-author"&gt;Автор:&lt;/label&gt;
+                        &lt;input type="text" id="book-author" name="author" required&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="book-genre"&gt;Жанр:&lt;/label&gt;
+                        &lt;select id="book-genre" name="genre" required&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="book-year"&gt;Рік видання:&lt;/label&gt;
+                        &lt;input type="number" id="book-year" name="year" min="1000" max="2025"&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-group"&gt;
+                        &lt;label for="book-description"&gt;Опис:&lt;/label&gt;
+                        &lt;textarea id="book-description" name="description" rows="4"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class="form-actions"&gt;
+                        &lt;button type="submit" id="save-book"&gt;Зберегти книгу&lt;/button&gt;
+                        &lt;button type="reset" id="reset-form"&gt;Очистити&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/section&gt;
+
+            &lt;section id="search-section" class="page-section"&gt;
+                &lt;h2 class="section-title"&gt;Пошук книг&lt;/h2&gt;
+                
+                &lt;form id="search-form"&gt;
+                    &lt;input type="text" id="search-input" placeholder="Введіть назву, автора або опис..."&gt;
+                    &lt;button type="submit"&gt;🔍 Пошук&lt;/button&gt;
+                &lt;/form&gt;
+                
+                &lt;div id="search-results"&gt;
+                    &lt;h3&gt;Результати пошуку&lt;/h3&gt;
+                    &lt;ul id="results-list"&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer id="app-footer"&gt;
+            &lt;div id="footer-content"&gt;
+                &lt;p id="copyright"&gt;© 2025 BookShelf. Особиста цифрова бібліотека.&lt;/p&gt;
+                &lt;p id="lab-info"&gt;Лабораторна робота №1: Структура HTML-документа&lt;/p&gt;
+                &lt;div id="footer-links"&gt;
+                    &lt;a href="about.html"&gt;Про проект&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+    &lt;!-- &lt;script src="js/script.js"&gt;&lt;/script&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;                        
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-tables" class="lab-section">
+                    <h2 class="section-title">HTML-код таблиць</h2>
+                    
+                    <div class="content-card">
+                        <h4>Код таблиці з книгами:</h4>
+                        <div class="code-block">
+&lt;table id="books-table" border="1"&gt;
+    &lt;thead id="table-header"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Назва книги&lt;/th&gt;
+            &lt;th&gt;Автор&lt;/th&gt;
+            &lt;th&gt;Жанр&lt;/th&gt;
+            &lt;th&gt;Рік&lt;/th&gt;
+            &lt;th&gt;Дії&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id="books-table-body"&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-images" class="lab-section">
+                    <h2 class="section-title">HTML-код зображень</h2>
+                    
+                    <div class="content-card">
+                        <h4>Код зображення:</h4>
+                        <div class="code-block">
+&lt;h2 class="section-title"&gt;
+    &lt;img src="pictures/books.svg" alt="Іконка бібліотеки" width="32" height="32" style="vertical-align: middle; margin-right: 3px;"&gt;
+    Моя бібліотека
+&lt;/h2&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-lists" class="lab-section">
+                    <h2 class="section-title">HTML-код списків</h2>
+                    
+                    <div class="content-card">
+                        <h4>Маркований список:</h4>
+                        <div class="code-block">
+&lt;ul id="nav-list"&gt;
+    &lt;li class="nav-item"&gt;&lt;button data-page="library"&gt;Моя бібліотека&lt;/button&gt;&lt;/li&gt;
+    &lt;li class="nav-item"&gt;&lt;button data-page="add-book"&gt;Додати книгу&lt;/button&gt;&lt;/li&gt;
+    &lt;li class="nav-item"&gt;&lt;button data-page="search"&gt;Пошук&lt;/button&gt;&lt;/li&gt;
+    &lt;li class="nav-item"&gt;&lt;a href="about.html" class="nav-link"&gt;Про проект&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                        </div>
+                        <div class="code-block">
+&lt;ul id="results-list"&gt;
+&lt;/ul&gt;
+                        </div>
+                        <h4>Нумерований список:</h4>
+                        <div class="code-block">
+&lt;ol id="stats-list"&gt;
+    &lt;li&gt;Загальна кількість книг: 0&lt;/li&gt;
+    &lt;li&gt;Кількість жанрів: 0&lt;/li&gt;
+    &lt;li&gt;Найдавніша книга: -&lt;/li&gt;
+    &lt;li&gt;Найновіша книга: -&lt;/li&gt;
+&lt;/ol&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-forms" class="lab-section">
+                    <h2 class="section-title">HTML-код форм</h2>
+                    
+                    <div class="content-card">
+                        <h4>Код форми для додавання книги:</h4>
+                        <div class="code-block">
+&lt;form id="add-book-form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="book-title"&gt;Назва книги:&lt;/label&gt;
+        &lt;input type="text" id="book-title" name="title" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="book-author"&gt;Автор:&lt;/label&gt;
+        &lt;input type="text" id="book-author" name="author" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="book-genre"&gt;Жанр:&lt;/label&gt;
+        &lt;select id="book-genre" name="genre" required&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="book-year"&gt;Рік видання:&lt;/label&gt;
+        &lt;input type="number" id="book-year" name="year" min="1000" max="2025"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="book-description"&gt;Опис:&lt;/label&gt;
+        &lt;textarea id="book-description" name="description" rows="4"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-actions"&gt;
+        &lt;button type="submit" id="save-book"&gt;Зберегти книгу&lt;/button&gt;
+        &lt;button type="reset" id="reset-form"&gt;Очистити&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab1-conclusions" class="lab-section">
+                    <h2 class="section-title">Висновки</h2>
+                    
+                    <div class="conclusion-box">
+                    <h3>Висновки до лабораторної роботи №1</h3>
+                    
+                    <p>Під час виконання лабораторної роботи №1 було успішно освоєно основи роботи з HTML-документами та системою контролю версій Git/GitHub. Основні практичні навички, отримані в результаті роботи:</p>
+                    
+                    <p>Створено повноцінний HTML-документ з правильною структурою, що включає всі необхідні елементи: заголовки різних рівнів, таблиці для організації даних, зображення для візуального оформлення, різні типи списків (нумеровані та марковані) та інтерактивні форми для взаємодії з користувачем.</p>
+                    
+                    <p>Опановано роботу з платформою GitHub: створено репозиторій для веб-застосунку BookShelf, налаштовано GitHub Pages для автоматичного хостингу, освоєно базові операції з комітами та пушами. Це дозволило організувати контроль версій проекту та забезпечити доступність веб-застосунку через живу сторінку.</p>
+                                        
+                    <p><strong>Загальний висновок:</strong> Виконання лабораторної роботи дозволило отримати фундаментальні практичні навички роботи з основними веб-технологіями, закріпити теоретичні знання про структуру HTML-документів та навчитися використовувати сучасні інструменти розробки для керування проектами. Отриманий досвід становить міцну основу для подальшого вивчення CSS та JavaScript.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
