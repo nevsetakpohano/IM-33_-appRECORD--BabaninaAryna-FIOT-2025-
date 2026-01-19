@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="lab-container">
+        <div class="lab-header">
+            <a href="index.html" class="back-to-main">← На головну</a>
+            <div class="lab-title">
+                <h1>Лабораторна робота №2</h1>
+                <h2>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ</h2>
+            </div>
+        </div>
+
+        <div class="lab-navigation">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#lab2-info">Тема, мета, розташування</a></li>
+                    <li><a href="#lab2-tag-selectors">Селектори тегу</a></li>
+                    <li><a href="#lab2-class-selectors">Селектори класів</a></li>
+                    <li><a href="#lab2-id-selectors">Селектори ідентифікаторів</a></li>
+                    <li><a href="#lab2-other-selectors">Інші селектори</a></li>
+                    <li><a href="#lab2-css-styling">CSS: Шрифти, текст, таблиці, фон, контур, списки</a></li>
+                    <li><a href="#lab2-figma">Макет Figma</a></li>
+                    <li><a href="#lab2-results">Результати робіт №1 та №2</a></li>
+                    <li><a href="#lab2-repositories">Репозиторії та живі сторінки</a></li>
+                    <li><a href="#lab2-conclusions">Висновки</a></li>
+                </ul>
+            </nav>
+
+            <main class="lab-content">
+                <section id="lab2-info" class="lab-section active">
+                    <h2 class="section-title">Тема, мета, місце розташування</h2>
+                    
+                    <div class="content-card">
+                        <h3>Тема</h3>
+                        <p><strong>КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</strong></p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Мета</h3>
+                        <p>Придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішніми та внутрішніми відступами, плаваючими елементами, оформленням текстових елементів.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Місце розташування</h3>
+                        <div class="links-grid">
+                            <a href="https://github.com/nevsetakpohano/IM-33_appWEB-Babanina-Aryna-FIOT-2025" class="link-button">
+                                <strong>Репозиторій WEB-застосунку</strong>
+                                <small>BookShelf project</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_appWEB-Babanina-Aryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка WEB-застосунку</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                            
+                            <a href="https://github.com/nevsetakpohano/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-" class="link-button">
+                                <strong>Репозиторій звітного документу</strong>
+                                <small>Report website</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-/" class="link-button">
+                                <strong>Жива сторінка звітного документу</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="lab2-tag-selectors" class="lab-section">
+                    <h2 class="section-title">Селектори тегу</h2>
+                    
+                    <div class="content-card">
+                        <h3>Застосування селекторів тегу у проекті BookShelf</h3>
+                        
+                        <h4>HTML-код з проекту BookShelf:</h4>
+                        <div class="code-block">
+&lt;body&gt;
+  &lt;h1&gt;BookShelf&lt;/h1&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;ID&lt;/th&gt;
+        &lt;th&gt;Назва книги&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+  &lt;/table&gt;
+  &lt;button&gt;Додати книгу&lt;/button&gt;
+  &lt;ul&gt;&lt;li&gt;Статистика&lt;/li&gt;&lt;/ul&gt;
+&lt;/body&gt;
+                        </div>
+                        
+                        <h4>CSS-код (стилізація тегів з style.css):</h4>
+                        <div class="code-block">
+/* Селектор тегу body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Селектор тегу button */
+button {
+    padding: 12px 24px;
+    background: #4a6491;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+/* Селектор тегу textarea */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab2-class-selectors" class="lab-section">
+                    <h2 class="section-title">Селектори класів</h2>
+                    
+                    <div class="content-card">
+                        <h3>Застосування селекторів класів у проекті BookShelf</h3>
+                        
+                        <h4>HTML-код з класами:</h4>
+                        <div class="code-block">
+&lt;li class="nav-item"&gt;
+  &lt;button data-page="library"&gt;Моя бібліотека&lt;/button&gt;
+&lt;/li&gt;
+
+&lt;section class="page-section active"&gt;
+  &lt;h2 class="section-title"&gt;Моя бібліотека&lt;/h2&gt;
+  
+  &lt;div class="form-group"&gt;
+    &lt;label for="book-title"&gt;Назва книги:&lt;/label&gt;
+    &lt;input type="text" id="book-title" required&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="form-actions"&gt;
+    &lt;button type="submit"&gt;Зберегти книгу&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                        </div>
+                        
+                        <h4>CSS-код (стилізація класів з style.css):</h4>
+                        <div class="code-block">
+/* Селектор класу .nav-item */
+.nav-item button,
+.nav-link {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Селектор класу .page-section */
+.page-section {
+    display: none;
+    padding: 30px;
+}
+
+.page-section.active {
+    display: block;
+}
+
+/* Селектор класу .section-title */
+.section-title {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4a6491;
+}
+
+/* Селектор класу .form-group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Селектор класу .form-actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab2-id-selectors" class="lab-section">
+                    <h2 class="section-title">Селектори ідентифікаторів</h2>
+                    
+                    <div class="content-card">
+                        <h3>Застосування селекторів ідентифікаторів у проекті BookShelf</h3>
+                        
+                        <h4>HTML-код з ідентифікаторами:</h4>
+                        <div class="code-block">
+&lt;div id="app"&gt;
+  &lt;header id="header"&gt;
+    &lt;h1 id="app-title"&gt;BookShelf&lt;/h1&gt;
+    &lt;nav id="main-nav"&gt;
+      &lt;ul id="nav-list"&gt;&lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;table id="books-table"&gt;
+    &lt;thead id="table-header"&gt;&lt;/thead&gt;
+    &lt;tbody id="books-table-body"&gt;&lt;/tbody&gt;
+  &lt;/table&gt;
+  
+  &lt;ol id="stats-list"&gt;&lt;/ol&gt;
+  &lt;ul id="results-list"&gt;&lt;/ul&gt;
+  
+  &lt;footer id="app-footer"&gt;
+    &lt;div id="footer-content"&gt;
+      &lt;div id="footer-links"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;
+                        </div>
+                        
+                        <h4>CSS-код (стилізація ідентифікаторів з style.css):</h4>
+                        <div class="code-block">
+/* Селектор ідентифікатора #app */
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Селектор ідентифікатора #header */
+#header {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    color: white;
+    padding: 20px 30px;
+}
+
+/* Селектор ідентифікатора #app-title */
+#app-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Селектор ідентифікатора #nav-list */
+#nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+/* Селектор ідентифікатора #books-table */
+#books-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* Селектор ідентифікатора #app-footer */
+#app-footer {
+    text-align: center;
+    padding: 25px 30px;
+    background: #f8f9fa;
+    border-top: 2px solid #eee;
+    color: #666;
+}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab2-other-selectors" class="lab-section">
+                    <h2 class="section-title">Інші селектори</h2>
+                    
+                    <div class="content-card">
+                        <h3>Застосування різних типів селекторів</h3>
+                        
+                        <h4>1. Універсальний селектор (*)</h4>
+                        <div class="code-block">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+                        </div>
+                        <p>Застосовується до всіх елементів на сторінці.</p>
+                        
+                        <h4>3. Дочірній селектор (>)</h4>
+                        <div class="code-block">
+/* Дочірній селектор через клас (приклад) */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+                        </div>
+                        <p>Застосовується до прямих дочірніх елементів.</p>
+                        
+                        <h4>4. Псевдокласи</h4>
+                        <div class="code-block">
+/* Псевдоклас :hover */
+.nav-item button:hover,
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+button:hover {
+    background: #2c3e50;
+}
+
+/* Псевдоклас :focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4a6491;
+    box-shadow: 0 0 0 2px rgba(74, 100, 145, 0.2);
+}
+
+/* Псевдоклас для таблиці */
+#books-table tbody tr:hover {
+    background-color: #f5f9ff;
+}
+
+/* Псевдоклас для посилань */
+#footer-links a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+                        </div>
+                        <p>Застосовуються для стилізації станів елементів.</p>
+                        
+                        <h4>5. Групування селекторів (,)</h4>
+                        <div class="code-block">
+.nav-item button,
+.nav-link {
+    /* спільні стилі для кнопок і посилань */
+}
+
+#stats-list li,
+#results-list li {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4a6491;
+    border-radius: 0 5px 5px 0;
+}
+                        </div>
+                        <p>Застосовує стилі до кількох елементів одночасно.</p>
+                    </div>
+                </section>
+
+                <section id="lab2-css-styling" class="lab-section">
+                    <h2 class="section-title">CSS: Шрифти, текст, таблиці, фон, контур, списки</h2>
+                    
+                    <div class="content-card">
+                        <h3>Стильове оформлення текстових елементів у BookShelf</h3>
+                        
+                        <h4>1. Шрифти та текст (з style.css):</h4>
+                        <div class="code-block">
+/* Шрифти */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+#app-title {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+/* Колір тексту */
+#header {
+    color: white;
+}
+
+body {
+    color: #333;
+}
+
+.section-title {
+    color: #2c3e50;
+}
+
+#app-footer {
+    color: #666;
+}
+                        </div>
+                        
+                        <h4>2. Контури (border) з style.css:</h4>
+                        <div class="code-block">
+/* Контури для кнопок */
+.nav-item button,
+.nav-link {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Контури для полів вводу */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Контур заголовка */
+.section-title {
+    border-bottom: 2px solid #4a6491;
+}
+
+/* Контур футера */
+#app-footer {
+    border-top: 2px solid #eee;
+}
+
+/* Контур для списків */
+#stats-list li,
+#results-list li {
+    border-left: 4px solid #4a6491;
+}
+                        </div>
+                        
+                        <h4>3. Фон (background) з style.css:</h4>
+                        <div class="code-block">
+/* Суцільний колір фону */
+body {
+    background-color: #f9f9f9;
+}
+
+#app {
+    background: white;
+}
+
+/* Градієнтний фон */
+#header {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+}
+
+/* Напівпрозорий фон */
+.nav-item button,
+.nav-link {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Фон для таблиці */
+#books-table th {
+    background-color: #4a6491;
+}
+
+/* Фон для списків */
+#stats-list li,
+#results-list li {
+    background: #f8f9fa;
+}
+
+/* Фон футера */
+#app-footer {
+    background: #f8f9fa;
+}
+                        </div>
+                        
+                        <h4>4. CSS для таблиць з style.css:</h4>
+                        <div class="code-block">
+/* Контейнер таблиці */
+#library-table-container {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+/* Основні стилі таблиці */
+#books-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* Заголовки таблиці */
+#books-table th {
+    background-color: #4a6491;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Клітинки таблиці */
+#books-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Ефект при наведенні */
+#books-table tbody tr:hover {
+    background-color: #f5f9ff;
+}
+                        </div>
+                        
+                        <h4>5. CSS для списків з style.css:</h4>
+                        <div class="code-block">
+/* Навігаційний список */
+#nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+/* Список статистики */
+#stats-list,
+#results-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Елементи списків */
+#stats-list li,
+#results-list li {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #4a6491;
+    border-radius: 0 5px 5px 0;
+}
+                        </div>
+                        
+                        <h4>6. Відступи (padding та margin) з style.css:</h4>
+                        <div class="code-block">
+/* Внутрішні відступи (padding) */
+body {
+    padding: 20px;
+}
+
+#header {
+    padding: 20px 30px;
+}
+
+.page-section {
+    padding: 30px;
+}
+
+#app-footer {
+    padding: 25px 30px;
+}
+
+/* Зовнішні відступи (margin) */
+#app {
+    margin: 0 auto;
+}
+
+#app-title {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+}
+
+.form-actions {
+    margin-top: 25px;
+}
+
+#library-table-container {
+    margin: 25px 0;
+}
+
+#stats-list li,
+#results-list li {
+    margin-bottom: 10px;
+}
+
+#footer-links {
+    margin-top: 15px;
+}
+                        </div>
+                    </div>
+                </section>
+                <section id="lab2-figma" class="lab-section">
+                    <h2 class="section-title">Макет в Figma звітного HTML-документа</h2>
+                    
+                    <div class="content-card">
+                        <h3>Проектування інтерфейсу у Figma</h3>
+                        
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/maket.jpg" alt="Фото Figma">
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section id="lab2-results" class="lab-section">
+                    <h2 class="section-title">Результати лабораторних робіт №1 та №2</h2>
+                    
+                    <div class="content-card">
+                        <h3>Об'єднання результатів обох лабораторних робіт</h3>
+                        
+                        <h4>Досягнення лабораторної роботи №1:</h4>
+                        <ul>
+                            <li>Створено веб-застосунок BookShelf для керування персональною бібліотекою</li>
+                            <li>Розроблено HTML-структуру з таблицями, формами, списками</li>
+                            <li>Налаштовано Git репозиторій та GitHub Pages</li>
+                            <li>Створено звітний HTML-документ</li>
+                        </ul>
+                        
+                        <h4>Досягнення лабораторної роботи №2:</h4>
+                        <ul>
+                            <li>Застосовано CSS для стилізації веб-застосунку BookShelf</li>
+                            <li>Використано різні типи селекторів: тегів, класів, ідентифікаторів</li>
+                            <li>Реалізовано адаптивний дизайн з медіа-запитами</li>
+                            <li>Додано інтерактивність через CSS переходи та анімації</li>
+                            <li>Створено Figma макет для звітного документу</li>
+                        </ul>
+                        
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab2.1.jpg" alt="Фото головної сторінки сайту">
+                            <img src="pictures/lab2.2.jpg" alt="Фото головної сторінки сайту">
+                        </div>
+                    </div>
+                </section>
+                <section id="lab2-repositories" class="lab-section">
+                    <h2 class="section-title">Репозиторії та живі сторінки</h2>
+                    
+                    <div class="content-card">
+                        <h3>Посилання на проекти</h3>
+                        
+                        <div class="links-grid">
+                            <a href="https://github.com/nevsetakpohano/IM-33_appWEB-Babanina-Aryna-FIOT-2025" class="link-button">
+                                <strong>Репозиторій WEB-застосунку</strong>
+                                <small>BookShelf project</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_appWEB-Babanina-Aryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка WEB-застосунку</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                            
+                            <a href="https://github.com/nevsetakpohano/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-" class="link-button">
+                                <strong>Репозиторій звітного документу</strong>
+                                <small>Report website</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_-appRECORD--BabaninaAryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка звітного документу</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab2-conclusions" class="lab-section">
+                    <h2 class="section-title">Висновки до лабораторної роботи №2</h2>
+                    
+                    <div class="conclusion-box">
+                        <h3>Висновки</h3>
+                        
+                        <p>Під час виконання лабораторної роботи №2 було успішно освоєно роботу з каскадними таблицями стилів (CSS) та різними типами селекторів. Основним практичним результатом стало створення повноцінного стилізованого веб-застосунку BookShelf для керування персональною бібліотекою.</p>
+                        
+                        <p>Ключові навички, отримані в ході роботи:</p>
+                        
+                        <ol>
+                            <li><strong>Робота з селекторами CSS:</strong> Навчилась застосовувати різні типи селекторів - тегів, класів, ідентифікаторів, а також комбіновані селектори, селектори атрибутів та універсальний селектор.</li>
+                            
+                            <li><strong>Стилізація текстових елементів:</strong> Опанувала техніки оформлення тексту: роботу з шрифтами, кольорами, відступами, контурами та фоном.</li>
+                            
+                            <li><strong>Адаптивний веб-дизайн:</strong> Реалізувала адаптивну верстку за допомогою медіа-запитів, що дозволяє коректне відображення на різних пристроях.</li>
+                            
+                            <li><strong>Сучасні CSS-технології:</strong> Застосувала Flexbox для створення гнучких макетів, CSS переходи для анімацій, градієнти для фонів.</li>
+                            
+                            <li><strong>Інструменти розробника:</strong> Навчилась використовувати Figma для проектування інтерфейсів та GitHub для контролю версій та хостингу.</li>
+                        </ol>
+                        
+                        <p><strong>Загальний висновок:</strong> Виконання лабораторної роботи №2 дозволило перейти від створення базової HTML-структури до повноцінного стилізованого веб-застосунку з професійним дизайном. Отримані знання про CSS селектори, каскадування та спадкування стилів складають фундамент для подальшого вивчення веб-розробки та створення складних інтерфейсів.</p>
+                        
+                        <p>Результатом роботи є не лише функціональний веб-застосунок BookShelf, а й структурований звітний документ, що демонструє всі етапи розробки та отримані навички.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

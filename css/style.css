@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-header {
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.header-text h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.student-info p {
+    margin-bottom: 5px;
+}
+
+.student-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4a6491;
+}
+
+.header-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+.labs-navigation h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.lab-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.lab-card:hover {
+    border-color: #4a6491;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+.lab-number {
+    width: 40px;
+    height: 40px;
+    background-color: #4a6491;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.lab-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.lab-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+}
+
+.lab-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.back-to-main {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4a6491;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.back-to-main:hover {
+    background-color: #4a6491;
+}
+
+.lab-title h1 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.lab-title h2 {
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.lab-navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 250px;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background-color: #f5f5f5;
+    border-left-color: #4a6491;
+}
+
+.sidebar-menu a.active {
+    background-color: #4a6491;
+    color: white;
+    border-left-color: #3b4f73;
+}
+
+.lab-content {
+    flex: 1;
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    min-height: 600px;
+}
+
+.lab-section {
+    display: none;
+}
+
+.lab-section.active {
+    display: block;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.content-card {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #4a6491;
+}
+
+.content-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.content-card h4 {
+    color: #4a6491;
+    margin: 15px 0 10px;
+    font-size: 16px;
+}
+
+.code-block {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.link-button {
+    display: block;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.link-button:hover {
+    background-color: #f5f5f5;
+    border-color: #4a6491;
+}
+
+.link-button strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.link-button small {
+    color: #666;
+    font-size: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4a6491;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.conclusion-box {
+    background-color: #e8f4fc;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border-left: 5px solid #4a6491;
+}
+
+.conclusion-box h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.screenshot-placeholder {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 15px 0;
+    color: #666;
+}
+
+@media (max-width: 992px) {
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .lab-navigation {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-photo {
+        margin-top: 20px;
+    }
+    
+    .header-photo img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lab-content {
+        padding: 15px;
+    }
+}
