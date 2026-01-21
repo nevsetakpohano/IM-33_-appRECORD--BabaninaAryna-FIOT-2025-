@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="lab-container">
+        <div class="lab-header">
+            <a href="index.html" class="back-to-main">← На головну</a>
+            <div class="lab-title">
+                <h1>Лабораторна робота №4</h1>
+                <h2>Тема: ОСНОВИ JAVASCRIPT У HTML-ДОКУМЕНТІ. ШАБЛОНІ РЯДКИ. КЕРУВАННЯ ПОРЯДКОМ ОБЧИСЛЕНЬ. МАСИВИ. МЕТОДИ МАСИВІВ. ФУНКЦІЇ</h2>
+            </div>
+        </div>
+
+        <div class="lab-navigation">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#lab4-info">Тема, мета, розташування</a></li>
+                    <li><a href="#lab4-task1">Завдання 1</a></li>
+                    <li><a href="#lab4-task2">Завдання 2</a></li>
+                    <li><a href="#lab4-task3">Завдання 3</a></li>
+                    <li><a href="#lab4-task4">Завдання 4</a></li>
+                    <li><a href="#lab4-task5">Завдання 5</a></li>
+                    <li><a href="#lab4-task6">Завдання 6</a></li>
+                    <li><a href="#lab4-task7">Завдання 7</a></li>
+                    <li><a href="#lab4-task8">Завдання 8</a></li>
+                    <li><a href="#lab4-task9">Завдання 9</a></li>
+                    <li><a href="#lab4-conclusions">Висновки</a></li>
+                </ul>
+            </nav>
+
+            <main class="lab-content">
+                <section id="lab4-info" class="lab-section active">
+                    <h2 class="section-title">Тема, мета, місце розташування</h2>
+                    
+                    <div class="content-card">
+                        <h3>Тема</h3>
+                        <p><strong>ОСНОВИ JAVASCRIPT У HTML-ДОКУМЕНТІ. ШАБЛОНІ РЯДКИ. КЕРУВАННЯ ПОРЯДКОМ ОБЧИСЛЕНЬ. МАСИВИ. МЕТОДИ МАСИВІВ. ФУНКЦІЇ</strong></p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Мета</h3>
+                        <p>придбати практичні навички роботи з конструкціями мови JS, масивами та фугкціями у js-сценаріях.  Реалізація програм засовами мови JAVASCRIPT</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Місце розташування</h3>
+                        <div class="links-grid">
+                            <a href="https://github.com/nevsetakpohano/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-" class="link-button">
+                                <strong>Репозиторій звітного документу</strong>
+                                <small>Report website</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_-appRECORD--BabaninaAryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка звітного документу</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task1" class="lab-section">
+                    <h2 class="section-title">Завдання 1</h2>
+                    
+                    <div class="content-card">
+                        <h3>Збережіть введене значення (використати метод prompt())  у змінну value
+
+Вивести це значення у Console, використовуючи шаблонний рядок.
+
+Перевірити: введене значення  від'ємне? Додатнє? Дорівнює нулю?
+
+Відповідь вивести за допомогою alert().
+
+Наприклад : при введенні 80  виведе «Число додатнє»
+
+Підказка: При введенні значень не забудьте зробити ряд перевірок.</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+const value = prompt('Введіть число:');
+
+console.log(`Ви ввели: ${value}`);
+
+const number = Number(value);
+
+if (isNaN(number)) {
+    alert('Це не число!');
+} else {
+    if (number > 0) {
+        alert('Число додатнє');
+    } else if (number < 0) {
+        alert('Число від\'ємне');
+    } else {
+        alert('Число дорівнює нулю');
+    }
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.1.1.jpg" alt="Скріншот lab4.1.1">
+                            <img src="pictures/lab4.1.2.jpg" alt="Скріншот lab4.1.2">
+                            <img src="pictures/lab4.1.3.jpg" alt="Скріншот lab4.1.3">
+                            <img src="pictures/lab4.1.4.jpg" alt="Скріншот lab4.1.4">
+                            <img src="pictures/lab4.1.5.jpg" alt="Скріншот lab4.1.5">
+                            <img src="pictures/lab4.1.6.jpg" alt="Скріншот lab4.1.6">
+                            <img src="pictures/lab4.1.7.jpg" alt="Скріншот lab4.1.7">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task2" class="lab-section">
+                    <h2 class="section-title">Завдання 2</h2>
+                    
+                    <div class="content-card">
+                        <h3> Змінна number може набувати 4 значення: '1', '2', '3' або '4' 
+ (запитуй це значення у користувача через prompt). 
+ 
+Якщо вона має значення '1', то у змінну result запишіть 'зима',
+ якщо має значення '2' - 'весна' і так далі.
+ Розв'яжіть завдання через switch-case.
+ Не забудьте про дефолтне значення, на випадок, якщо користувач  введе в prompt щось інше. 
+ Значення змінної result виведіть в консоль.</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+const number = prompt("Введіть число від 1 до 4 (1-зима, 2-весна, 3-літо, 4-осінь):");
+
+let result;
+
+switch (number) {
+    case '1':
+        result = 'зима';
+        break;
+    case '2':
+        result = 'весна';
+        break;
+    case '3':
+        result = 'літо';
+        break;
+    case '4':
+        result = 'осінь';
+        break;
+    default:
+        result = 'невідома пора року';
+}
+
+console.log(`Введене число: ${number}`);
+console.log(`Результат: ${result}`);
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.2.1.jpg" alt="Скріншот lab4.2.1">
+                            <img src="pictures/lab4.2.2.jpg" alt="Скріншот lab4.2.2">
+                            <img src="pictures/lab4.2.3.jpg" alt="Скріншот lab4.2.3">
+                            <img src="pictures/lab4.2.4.jpg" alt="Скріншот lab4.2.4">
+                            <img src="pictures/lab4.2.5.jpg" alt="Скріншот lab4.2.5">
+                            <img src="pictures/lab4.2.6.jpg" alt="Скріншот lab4.2.6">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task3" class="lab-section">
+                    <h2 class="section-title">Завдання 3</h2>
+                    
+                    <div class="content-card">
+                        <h3>Є Admin  та User, з відповідними паролями.   (Об'явити , проініцілізувати) 
+
+Написати програмний код, який запитуватиме у користувача  логін (використати  prompt) і виводить результат в консоль браузера, використовуючи шаблонний рядок.
+
+ Після цього додайте перевірку введеного користувачем значення: 
+	якщо відвідувач вводить " Admin  ",  то prompt запитує пароль. У випадку вдалої ідентифікації в alert вивести « Hello, Admin  ;
+	 якщо нічого не ввели або натиснули Cancel, то вивести в alert рядок  " Cancelled ";
+	 в іншому випадку вивести в alert рядок " I don't know you"
+Теж саме виконати з User</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+const ADMIN_LOGIN = "Admin";
+const USER_LOGIN = "User";
+const ADMIN_PASSWORD = "admin123";
+const USER_PASSWORD = "user123";
+
+const login = prompt("Введіть логін:");
+
+console.log(`Користувач ввів логін: "${login}"`);
+
+if (login === ADMIN_LOGIN) {
+    const password = prompt("Введіть пароль:");
+    
+    if (password === ADMIN_PASSWORD) {
+        alert("Hello, Admin");
+        console.log("Користувач успішно авторизувався як Admin");
+    } else if (password === null || password === "") {
+        alert("Cancelled");
+        console.log("Користувач скасував введення пароля");
+    } else {
+        alert("Wrong password");
+        console.log("Введено невірний пароль для Admin");
+    }
+    
+} else if (login === USER_LOGIN) {
+    const password = prompt("Введіть пароль:");
+    
+    if (password === USER_PASSWORD) {
+        alert("Hello, User");
+        console.log("Користувач успішно авторизувався як User");
+    } else if (password === null || password === "") {
+        alert("Cancelled");
+        console.log("Користувач скасував введення пароля");
+    } else {
+        alert("Wrong password");
+        console.log("Введено невірний пароль для User");
+    }
+    
+} else if (login === null || login === "") {
+    alert("Cancelled");
+    console.log("Користувач скасував введення логіну");
+} else {
+    alert("I don't know you");
+    console.log(`Невідомий логін: "${login}"`);
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.3.1.jpg" alt="Скріншот lab4.3.1">
+                            <img src="pictures/lab4.3.2.jpg" alt="Скріншот lab4.3.2">
+                            <img src="pictures/lab4.3.3.jpg" alt="Скріншот lab4.3.3">
+                            <img src="pictures/lab4.3.4.jpg" alt="Скріншот lab4.3.4">
+                            <img src="pictures/lab4.3.5.jpg" alt="Скріншот lab4.3.5">
+                            <img src="pictures/lab4.3.6.jpg" alt="Скріншот lab4.3.6">
+                            <img src="pictures/lab4.3.7.jpg" alt="Скріншот lab4.3.7">
+                            <img src="pictures/lab4.3.8.jpg" alt="Скріншот lab4.3.8">
+                            <img src="pictures/lab4.3.9.jpg" alt="Скріншот lab4.3.9">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task4" class="lab-section">
+                    <h2 class="section-title">Завдання 4</h2>
+                    
+                    <div class="content-card">
+                        <h3>Станція з продажу ремонтних дроїдів.
+
+Оголоси функцію makeTransaction, яка очікує два параметри, значення яких будуть задаватися під час її виклику:  quantity— перший параметр, число, що містить кількість замовлених дроїдів  pricePerDroid — другий параметр, число, що містить вартість одного дроїда
+
+Напиши  код функції так, щоб вона повертала рядок з повідомленням про покупку ремонтних дроїдів: "You ordered <quantity> droids worth <totalPrice> credits!", де:
+  <quantity> — це кількість замовлених дроїдів 
+ <totalPrice> — це загальна вартість замовлення, тобто вартість усіх замовлених дроїдів</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+function makeTransaction(quantity, pricePerDroid) {
+    return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.4.1.jpg" alt="Скріншот lab4.4.1">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task5" class="lab-section">
+                    <h2 class="section-title">Завдання 5</h2>
+                    
+                    <div class="content-card">
+                        <h3>Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в довільному регістрі, наприклад SPAM або sAlE.
+
+Доповни код функції таким чином, що:
+•	Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
+•	Якщо в рядку відсутні заборонені слова, функція повертає буль false</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+function checkForSpam(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    if (lowerMessage.includes('spam') || lowerMessage.includes('sale')) {
+        return true;
+    }
+    
+    return false;
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.5.1.jpg" alt="Скріншот lab4.5.1">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task6" class="lab-section">
+                    <h2 class="section-title">Завдання 6</h2>
+                    
+                    <div class="content-card">
+                        <h3>Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) та значення (value) як параметри. Функція повинна повертати новий масив лише тих чисел із масиву numbers, які більші за значення value.
+Усередині функції:
+	Створи порожній масив, у який будеш додавати підходящі числа.
+	Використай цикл для ітерації кожного елемента масиву numbers.
+	Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого масиву.
+Поверни свій новий масив з підходящими числами як результат.</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+function filterArray(numbers, value) {
+    const result = [];
+    
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > value) {
+            result.push(numbers[i]);
+        }
+    }
+    
+    return result;
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.6.1.jpg" alt="Скріншот lab4.6.1">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task7" class="lab-section">
+                    <h2 class="section-title">Завдання 7</h2>
+                    
+                    <div class="content-card">
+                        <h3>1.Створити одновимірний масив, кількість елементів якого задана користувачем. Знайти максимальний серед парних елементів та мінімальний серед елементів з парними індексами. В масиві поміняти місцями знайдені максимальний та мінімальний елементи, надрукувати вхідний та вихідний масиви. Застосувати функції
+2. Виконати сортування вихідного масиву за зростанням методом вставки. Застосувати функції</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+function main() {
+    console.log("=== ПРОГРАМА ДЛЯ РОБОТИ З МАСИВАМИ ===\n");
+    
+    console.log("1. Створення масиву та робота з елементами:");
+    
+    function createArray(size) {
+        const arr = [];
+        for (let i = 0; i < size; i++) {
+            arr.push(Math.floor(Math.random() * 100) + 1);
+        }
+        return arr;
+    }
+    
+    function findMaxEven(arr) {
+        let max = -Infinity;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0 && arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max === -Infinity ? null : max;
+    }
+    
+    function findMinEvenIndex(arr) {
+        let min = Infinity;
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min === Infinity ? null : min;
+    }
+    
+    function swapElements(arr, value1, value2) {
+        const newArr = [...arr];
+        const index1 = newArr.indexOf(value1);
+        const index2 = newArr.indexOf(value2);
+        
+        if (index1 !== -1 && index2 !== -1 && index1 !== index2) {
+            [newArr[index1], newArr[index2]] = [newArr[index2], newArr[index1]];
+        }
+        
+        return newArr;
+    }
+    
+    let size;
+    do {
+        size = parseInt(prompt("Введіть кількість елементів масиву (більше 0):"));
+    } while (isNaN(size) || size <= 0);
+    
+    const originalArray = createArray(size);
+    console.log(`Вхідний масив (${size} елементів): [${originalArray.join(', ')}]`);
+    
+    const maxEven = findMaxEven(originalArray);
+    const minEvenIndex = findMinEvenIndex(originalArray);
+    
+    console.log(`Максимальний серед парних елементів: ${maxEven}`);
+    console.log(`Мінімальний серед елементів з парними індексами: ${minEvenIndex}`);
+    
+    let swappedArray;
+    if (maxEven !== null && minEvenIndex !== null) {
+        swappedArray = swapElements(originalArray, maxEven, minEvenIndex);
+        console.log(`Вихідний масив (після обміну): [${swappedArray.join(', ')}]`);
+    } else {
+        swappedArray = [...originalArray];
+        console.log("Не знайдено елементів для обміну, масив залишається без змін");
+    }
+    
+    console.log("\n2. Сортування методом вставки:");
+    
+    function insertionSort(arr) {
+        const sortedArray = [...arr];
+        
+        for (let i = 1; i < sortedArray.length; i++) {
+            const current = sortedArray[i];
+            let j = i - 1;
+            
+            while (j >= 0 && sortedArray[j] > current) {
+                sortedArray[j + 1] = sortedArray[j];
+                j--;
+            }
+            
+            sortedArray[j + 1] = current;
+        }
+        
+        return sortedArray;
+    }
+    
+    const sortedArray = insertionSort(swappedArray);
+    console.log(`Відсортований масив: [${sortedArray.join(', ')}]`);
+    
+    console.log("\n=== РЕЗЮМЕ ===");
+    console.log(`Розмір масиву: ${size}`);
+    console.log(`Початковий масив: [${originalArray.join(', ')}]`);
+    console.log(`Максимальний парний: ${maxEven}`);
+    console.log(`Мінімальний з парним індексом: ${minEvenIndex}`);
+    console.log(`Масив після обміну: [${swappedArray.join(', ')}]`);
+    console.log(`Відсортований масив: [${sortedArray.join(', ')}]`);
+}
+
+main();
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.7.1.jpg" alt="Скріншот lab4.7.1">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task8" class="lab-section">
+                    <h2 class="section-title">Завдання 8</h2>
+                    
+                    <div class="content-card">
+                        <h3>Є двовимірний масив додатніх і від'ємних чисел. (об'явити проініціалізувати  генератором випадкових чисел). Вивести у Console браузера.
+
+Створити два масива: масив додатніх чисел  і масив від'ємних чисел. 
+Третій елемент у додатньому масиві заміни на від'ємне значення, яке буде введено  за допомогою  prompt
+
+Вивести у Console браузера.</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+function create2DArray(rows, cols) {
+    const array = [];
+    for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < cols; j++) {
+            row.push(Math.floor(Math.random() * 101) - 50);
+        }
+        array.push(row);
+    }
+    return array;
+}
+
+function printArray(array, title) {
+    console.log(`=== ${title} ===`);
+    array.forEach((row, i) => {
+        console.log(`Рядок ${i}: [${row.join(', ')}]`);
+    });
+    console.log('');
+}
+
+function splitToPositiveAndNegative(array2D) {
+    const positive = [];
+    const negative = [];
+    
+    for (let i = 0; i < array2D.length; i++) {
+        for (let j = 0; j < array2D[i].length; j++) {
+            const num = array2D[i][j];
+            if (num > 0) {
+                positive.push(num);
+            } else if (num < 0) {
+                negative.push(num);
+            }
+        }
+    }
+    
+    return { positive, negative };
+}
+
+function main() {
+    console.log("=== РОБОТА З ДВОВИМІРНИМ МАСИВОМ ===\n");
+    
+    const rows = 3;
+    const cols = 4;
+    const twoDArray = create2DArray(rows, cols);
+    
+    printArray(twoDArray, 'Початковий двовимірний масив');
+    
+    const { positive, negative } = splitToPositiveAndNegative(twoDArray);
+    
+    console.log('Масив додатніх чисел:', positive);
+    console.log('Масив від\'ємних чисел:', negative);
+    
+    if (positive.length >= 3) {
+        let newValue;
+        do {
+            const input = prompt('Введіть від\'ємне число для заміни третього елементу:');
+            newValue = Number(input);
+        } while (isNaN(newValue) || newValue >= 0);
+        
+        console.log(`\nЗамінюємо третій елемент (${positive[2]}) на ${newValue}`);
+        positive[2] = newValue;
+        
+        console.log('Оновлений масив додатніх чисел:', positive);
+    } else {
+        console.log('\nУ масиві додатніх чисел менше трьох елементів!');
+    }
+    
+    console.log('\n=== РЕЗЮМЕ ===');
+    printArray(twoDArray, 'Двовимірний масив (без змін)');
+    console.log('Масив додатніх чисел:', positive);
+    console.log('Масив від\'ємних чисел:', negative);
+}
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.8.1.jpg" alt="Скріншот lab4.8.1">
+                            <img src="pictures/lab4.8.2.jpg" alt="Скріншот lab4.8.2">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-task9" class="lab-section">
+                    <h2 class="section-title">Завдання 9</h2>
+                    
+                    <div class="content-card">
+                        <h3>Назва завдання:
+Валідація HTML-форми реєстрації користувача
+Примітки:
+Забезпечити перевірку елементів HTML-форми таких видів: ціле число, дійсне число, дата у форматі DD.MM.YYYY, однаковість даних у полях введення паролю (основне та перевірочне). Крім того, забезпечити перевірку введення обов'язкових полів, помічених (*).</h3>
+                        
+                        <h4>Код JavaScript:</h4>
+                        <div class="code-block">
+document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            function validateInteger(value) {
+            const num = parseInt(value, 10);
+            const trimmed = value.trim();
+            
+            if (trimmed.includes('.')) {
+                return false;
+            }
+            
+            return !isNaN(num) && num > 0 && num.toString() === trimmed;
+            }   
+            
+            function validateFloat(value) {
+                const num = parseFloat(value);
+                return !isNaN(num) && num > 0;
+            }
+
+            function validateDate(value) {
+                const regex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
+                if (!regex.test(value)) return false;
+                
+                const [, day, month, year] = value.match(regex);
+                const date = new Date(`${year}-${month}-${day}`);
+                
+                return date.getDate() == day && 
+                       (date.getMonth() + 1) == month && 
+                       date.getFullYear() == year;
+            }
+            
+            function validateEmail(email) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+            
+            function validatePhone(phone) {
+                if (!phone) return true;
+                const regex = /^\+380\d{9}$/;
+                return regex.test(phone);
+            }
+            
+            function showError(elementId, errorId, message) {
+                const element = document.getElementById(elementId);
+                const errorElement = document.getElementById(errorId);
+                
+                element.style.borderColor = 'red';
+                errorElement.textContent = message;
+                errorElement.classList.add('active');
+                
+                return false;
+            }
+            
+            function hideError(elementId, errorId) {
+                const element = document.getElementById(elementId);
+                const errorElement = document.getElementById(errorId);
+                
+                element.style.borderColor = '#ddd';
+                errorElement.classList.remove('active');
+                
+                return true;
+            }
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                const age = document.getElementById('age').value;
+                if (!age || !validateInteger(age)) {
+                    isValid = showError('age', 'ageError', 'Будь ласка, введіть коректне ціле число (більше 0)');
+                } else {
+                    hideError('age', 'ageError');
+                }
+                
+                const weight = document.getElementById('weight').value;
+                if (!weight || !validateFloat(weight)) {
+                    isValid = showError('weight', 'weightError', 'Будь ласка, введіть коректне дійсне число (більше 0)');
+                } else {
+                    hideError('weight', 'weightError');
+                }
+                
+                const birthdate = document.getElementById('birthdate').value;
+                if (!birthdate || !validateDate(birthdate)) {
+                    isValid = showError('birthdate', 'birthdateError', 'Будь ласка, введіть коректну дату у форматі DD.MM.YYYY');
+                } else {
+                    hideError('birthdate', 'birthdateError');
+                }
+                
+                const email = document.getElementById('email').value;
+                if (!email || !validateEmail(email)) {
+                    isValid = showError('email', 'emailError', 'Будь ласка, введіть коректну email адресу');
+                } else {
+                    hideError('email', 'emailError');
+                }
+                
+                const password = document.getElementById('password').value;
+                if (!password || password.length < 6) {
+                    isValid = showError('password', 'passwordError', 'Пароль повинен містити мінімум 6 символів');
+                } else {
+                    hideError('password', 'passwordError');
+                }
+                
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                if (!confirmPassword || password !== confirmPassword) {
+                    isValid = showError('confirmPassword', 'confirmPasswordError', 'Паролі не співпадають');
+                } else {
+                    hideError('confirmPassword', 'confirmPasswordError');
+                }
+                
+                const phone = document.getElementById('phone').value;
+                if (phone && !validatePhone(phone)) {
+                    isValid = showError('phone', 'phoneError', 'Будь ласка, введіть коректний номер телефону у форматі +380XXXXXXXXX');
+                } else {
+                    hideError('phone', 'phoneError');
+                }
+                
+                if (isValid) {
+                    successMessage.classList.add('active');
+                    setTimeout(() => {
+                        successMessage.classList.remove('active');
+                    }, 5000);
+                    
+                    console.log('✅ Дані форми:');
+                    console.log('Вік:', age);
+                    console.log('Вага:', weight);
+                    console.log('Дата народження:', birthdate);
+                    console.log('Email:', email);
+                    console.log('Пароль:', '******');
+                    console.log('Телефон:', phone || 'не вказано');
+                } else {
+                    successMessage.classList.remove('active');
+                }
+            });
+            
+            document.getElementById('resetBtn').addEventListener('click', function() {
+                form.reset();
+                successMessage.classList.remove('active');
+                
+                const errors = document.querySelectorAll('.error');
+                errors.forEach(error => error.classList.remove('active'));
+                
+                const inputs = document.querySelectorAll('input');
+                inputs.forEach(input => input.style.borderColor = '#ddd');
+            });
+            
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    switch(this.id) {
+                        case 'age':
+                            if (this.value && !validateInteger(this.value)) {
+                                showError('age', 'ageError', 'Будь ласка, введіть коректне ціле число (більше 0)');
+                            } else {
+                                hideError('age', 'ageError');
+                            }
+                            break;
+                            
+                        case 'weight':
+                            if (this.value && !validateFloat(this.value)) {
+                                showError('weight', 'weightError', 'Будь ласка, введіть коректне дійсне число (більше 0)');
+                            } else {
+                                hideError('weight', 'weightError');
+                            }
+                            break;
+                            
+                        case 'birthdate':
+                            if (this.value && !validateDate(this.value)) {
+                                showError('birthdate', 'birthdateError', 'Будь ласка, введіть коректну дату у форматі DD.MM.YYYY');
+                            } else {
+                                hideError('birthdate', 'birthdateError');
+                            }
+                            break;
+                            
+                        case 'email':
+                            if (this.value && !validateEmail(this.value)) {
+                                showError('email', 'emailError', 'Будь ласка, введіть коректну email адресу');
+                            } else {
+                                hideError('email', 'emailError');
+                            }
+                            break;
+                            
+                        case 'phone':
+                            if (this.value && !validatePhone(this.value)) {
+                                showError('phone', 'phoneError', 'Будь ласка, введіть коректний номер телефону у форматі +380XXXXXXXXX');
+                            } else {
+                                hideError('phone', 'phoneError');
+                            }
+                            break;
+                            
+                        case 'confirmPassword':
+                            const password = document.getElementById('password').value;
+                            if (this.value && password !== this.value) {
+                                showError('confirmPassword', 'confirmPasswordError', 'Паролі не співпадають');
+                            } else {
+                                hideError('confirmPassword', 'confirmPasswordError');
+                            }
+                            break;
+                    }
+                });
+            });
+        });
+                        </div>
+                        
+                        <h4>Скріншоти виконання:</h4>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab4.9.1.jpg" alt="Скріншот lab4.9.1">
+                            <img src="pictures/lab4.9.2.jpg" alt="Скріншот lab4.9.2">
+                            <img src="pictures/lab4.9.3.jpg" alt="Скріншот lab4.9.3">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab4-conclusions" class="lab-section">
+                    <h2 class="section-title">Висновки до лабораторної роботи №4</h2>
+                    
+                   <div class="conclusion-box">
+                        <h3>Висновки</h3>
+                        
+                        <p>Під час виконання лабораторної роботи №4 було успішно освоєно основи роботи з мовою JavaScript у HTML-документах. Основним практичним результатом стало створення різноманітних програм та скриптів, які демонструють можливості мови JS для обробки даних, роботи з масивами та функціями.</p>
+                        
+                        <p>Ключові навички, отримані в ході роботи:</p>
+                        
+                        <ol>
+                            <li><strong>Робота з базовими конструкціями JavaScript:</strong> Навчилась використовувати умовні оператори (if-else), оператор вибору (switch-case), цикли (for, while) для керування потоком виконання програм.</li>
+                            
+                            <li><strong>Використання шаблонних рядків:</strong> Опанувала техніку створення динамічних рядків за допомогою шаблонних літералів, що значно спрощує форматування виводу даних.</li>
+                            
+                            <li><strong>Робота з масивами та їх методами:</strong> Навчилась створювати, модифікувати та обробляти одно- та двовимірні масиви, використовувати методи push(), indexOf(), includes() тощо.</li>
+                            
+                            <li><strong>Створення та використання функцій:</strong> Опанувала техніку створення функцій з параметрами та поверненням значень, що дозволяє структурувати код та повторно використовувати логіку.</li>
+                            
+                            <li><strong>Взаємодія з користувачем:</strong> Навчилась використовувати prompt(), alert(), console.log() для введення та виведення даних, а також обробляти події форми для створення інтерактивних веб-додатків.</li>
+                            
+                            <li><strong>Валідація даних:</strong> Реалізувала систему валідації HTML-форми з перевіркою різних типів даних (цілі числа, дійсні числа, дати, email, паролі).</li>
+                        </ol>
+                        
+                        <p><strong>Загальний висновок:</strong> Виконання лабораторної роботи №4 дозволило перейти від статичних HTML/CSS сторінок до динамічних веб-додатків з інтерактивністю та обробкою даних. Отримані знання про основи JavaScript, роботу з масивами, функціями та подіями складають фундамент для подальшого вивчення веб-розробки та створення складних клієнтських додатків.</p>
+                        
+                        <p>Результатом роботи є набір практичних прикладів та функціональна система валідації форми, що демонструє всі основні аспекти роботи з JavaScript у контексті веб-розробки.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

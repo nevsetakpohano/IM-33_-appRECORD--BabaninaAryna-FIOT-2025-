@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Стилі для демонстрації верстки */
+        .layout-demo {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .table-layout {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .table-layout th, .table-layout td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .table-layout th {
+            background-color: #4a6491;
+            color: white;
+        }
+        
+        .table-layout .header-cell {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+        
+        .table-layout .footer-cell {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+        }
+        
+        /* Блокова верстка */
+        .block-layout {
+            background: white;
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        
+        .block-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .block-container {
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .block-left {
+            float: left;
+            width: 200px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            margin-right: 15px;
+            min-height: 150px;
+        }
+        
+        .block-right {
+            overflow: hidden;
+        }
+        
+        .block-top {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .block-columns {
+            overflow: hidden;
+        }
+        
+        .block-col {
+            float: left;
+            width: 48%;
+            background-color: #f0f0f0;
+            padding: 15px;
+            min-height: 120px;
+        }
+        
+        .block-col:first-child {
+            margin-right: 4%;
+        }
+        
+        .block-footer {
+            clear: both;
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        /* Адаптивність для блокової верстки */
+        @media (max-width: 768px) {
+            .block-left {
+                float: none;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .block-col {
+                float: none;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .block-col:first-child {
+                margin-right: 0;
+            }
+        }
+        
+        /* Стилі для прикладу з картинки */
+        .java-course {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .java-course h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .course-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4a6491;
+        }
+        
+        .learning-steps {
+            margin: 25px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: #4a6491;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .levels {
+            margin: 25px 0;
+        }
+        
+        .level {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 5px solid #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="lab-container">
+        <div class="lab-header">
+            <a href="index.html" class="back-to-main">← На головну</a>
+            <div class="lab-title">
+                <h1>Лабораторна робота №3</h1>
+                <h2>Тема: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX. АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT</h2>
+            </div>
+        </div>
+
+        <div class="lab-navigation">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#lab3-info">Тема, мета, розташування</a></li>
+                    <li><a href="#lab3-requirements">Завдання 1: Відповідність веб-сайту</a></li>
+                    <li><a href="#lab3-task2">Завдання 2</a></li>
+                    <li><a href="#lab3-task2-1">Завдання 2.1: Таблична верстка</a></li>
+                    <li><a href="#lab3-task2-2">Завдання 2.2: Блокова верстка</a></li>
+                    <li><a href="#lab3-task3">Завдання 3</a></li>
+                    <li><a href="#lab3-conclusions">Висновки</a></li>
+                </ul>
+            </nav>
+
+            <main class="lab-content">
+                <section id="lab3-info" class="lab-section active">
+                    <h2 class="section-title">Тема, мета, місце розташування</h2>
+                    
+                    <div class="content-card">
+                        <h3>Тема</h3>
+                        <p><strong>ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX. АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT</strong></p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Мета</h3>
+                        <ul>
+                            <li>Придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з'ясувати переваги та недоліки типів макетів веб-сторінок</li>
+                            <li>Придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3>Місце розташування</h3>
+                        <div class="links-grid">
+                            <a href="https://github.com/nevsetakpohano/IM-33_appWEB-Babanina-Aryna-FIOT-2025" class="link-button">
+                                <strong>Репозиторій WEB-застосунку</strong>
+                                <small>BookShelf project</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_appWEB-Babanina-Aryna-FIOT-2025/" class="link-button">
+                                <strong>Жива сторінка WEB-застосунку</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                            
+                            <a href="https://github.com/nevsetakpohano/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-" class="link-button">
+                                <strong>Репозиторій звітного документу</strong>
+                                <small>Report website</small>
+                            </a>
+                            
+                            <a href="https://nevsetakpohano.github.io/IM-33_-appRECORD--BabaninaAryna-FIOT-2025-/" class="link-button">
+                                <strong>Жива сторінка звітного документу</strong>
+                                <small>GitHub Pages</small>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab3-requirements" class="lab-section">
+                    <h2 class="section-title">Завдання 1: Відповідність веб-сайту вимогам</h2>
+                    
+                    <div class="content-card">
+                        <h3>Змінений CSS веб-застосунку</h3>
+                        <p><strong>1. Метатег viewport (з index.html):</strong></p>
+                        <div class="code-block">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        </div>
+                        
+                        <p><strong>2. Медіа-запити для адаптивної верстки:</strong></p>
+                        <div class="code-block">
+@media (max-width: 768px) {
+    #nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-item button,
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    #footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .page-section {
+        padding: 20px;
+    }
+}
+                        </div>
+                        
+                        <p><strong>3. Flexbox для навігації:</strong></p>
+                        <div class="code-block">
+#nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+                        </div>
+                        
+                        <p><strong>4. Блокова верстка та адаптивність:</strong></p>
+                        <div class="code-block">
+/* Бургер-меню для мобільних пристроїв */
+@media (max-width: 768px) {
+    #burger-menu {
+        display: block;
+    }
+    
+    #main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #2c3e50;
+        z-index: 999;
+        transition: right 0.3s ease-in-out;
+        padding-top: 80px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+    
+    #main-nav.active {
+        right: 0;
+    }
+}
+                        </div>
+                        
+                        <h4>Реалізовано мною:</h4>
+                        <ul>
+                            <li>Адаптивну верстку з використанням медіа-запитів для різних розмірів екранів</li>
+                            <li>Коректне використання метатегу viewport</li>
+                            <li>Блокову верстку з плаваючими елементами</li>
+                            <li>Сучасну верстку за допомогою Flexbox для створення гнучких макетів</li>
+                            <li>Адаптивне бургер-меню для мобільних пристроїв</li>
+                        </ul>
+                        
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab3.1.jpg" alt="Скріншот веб-застосунку BookShelf на десктопі">
+                            <img src="pictures/lab3.2.jpg" alt="Скріншот веб-застосунку BookShelf на мобільному пристрої">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab3-task2" class="lab-section">
+                    <h2 class="section-title">Завдання 2: Розмітка HTML-документа</h2>
+                    
+                    <div class="content-card">
+                        <h3>Засобами HTML та CSS виконати Завдання №2 у звітному HTML-документі</h3>
+                        <ul>
+                            <li>Розмітку за допомогою таблиці (варіант 1)</li>
+                            <div class="screenshot-placeholder">
+                                <img src="pictures/lab3.3.jpg" alt="Варіант 1">
+                            </div>
+                            <li>Розмітку за допомогою блоків (плаваючих елементів) (варіант 2)</li>
+                            <div class="screenshot-placeholder">
+                                <img src="pictures/lab3.4.jpg" alt="Варіант 2">
+                            </div>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="lab3-task2-1" class="lab-section">
+                    <h2 class="section-title">Завдання 2.1: Таблична верстка</h2>
+                    
+                    <div class="content-card">
+                        <h3>Розмітка за допомогою таблиці</h3>
+                        <p><strong>Варіант:</strong> 1</p>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab3.3.jpg" alt="Варіант 1">
+                        </div>
+                        <h4>Фіксована таблична верстка (ширина 960px):</h4>
+                        <div class="layout-demo">
+                            <table class="table-layout" style="width: 960px; margin: 0 auto;">
+                                <tr>
+                                    <td colspan="3" class="header-cell">
+                                        <h3>Хедер сайту</h3>
+                                        <p>Фіксована таблична верстка (960px)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 200px; background-color: #e8f4fc; padding: 20px;">
+                                        <h4>Ліва колонка</h4>
+                                        <p>Контент лівої колонки</p>
+                                    </td>
+                                    <td style="background-color: #f0f0f0; padding: 20px;">
+                                        <h4>Центральна колонка</h4>
+                                        <p>Основний контент сайту</p>
+                                    </td>
+                                    <td style="background-color: #f0f0f0; padding: 20px;">
+                                        <h4>Права колонка</h4>
+                                        <p>Додатковий контент</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="footer-cell">
+                                        <p>Футер сайту © 2025</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <h4>HTML-код фіксованої табличної верстки:</h4>
+                        <div class="code-block">
+&lt;table class="table-layout" style="width: 960px; margin: 0 auto;"&gt;
+    &lt;tr&gt;
+        &lt;td colspan="3" class="header-cell"&gt;
+            &lt;h3&gt;Хедер сайту&lt;/h3&gt;
+            &lt;p&gt;Фіксована таблична верстка (960px)&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td style="width: 200px; background-color: #e8f4fc; padding: 20px;"&gt;
+            &lt;h4&gt;Ліва колонка&lt;/h4&gt;
+            &lt;p&gt;Контент лівої колонки&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style="background-color: #f0f0f0; padding: 20px;"&gt;
+            &lt;h4&gt;Центральна колонка&lt;/h4&gt;
+            &lt;p&gt;Основний контент сайту&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style="background-color: #f0f0f0; padding: 20px;"&gt;
+            &lt;h4&gt;Права колонка&lt;/h4&gt;
+            &lt;p&gt;Додатковий контент&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="3" class="footer-cell"&gt;
+            &lt;p&gt;Футер сайту © 2025&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                        </div>
+                        
+                        <h4>Гумова таблична верстка (ширина 90%):</h4>
+                        <div class="layout-demo">
+                            <table class="table-layout" style="width: 90%; margin: 0 auto;">
+                                <tr>
+                                    <td colspan="3" class="header-cell">
+                                        <h3>Хедер сайту</h3>
+                                        <p>Гумова таблична верстка (90%)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%; background-color: #e8f4fc; padding: 20px;">
+                                        <h4>Ліва колонка</h4>
+                                        <p>Контент лівої колонки</p>
+                                    </td>
+                                    <td style="background-color: #f0f0f0; padding: 20px;">
+                                        <h4>Центральна колонка</h4>
+                                        <p>Основний контент сайту</p>
+                                    </td>
+                                    <td style="background-color: #f0f0f0; padding: 20px;">
+                                        <h4>Права колонка</h4>
+                                        <p>Додатковий контент</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="footer-cell">
+                                        <p>Футер сайту © 2025</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <h4>HTML-код гумової табличної верстки:</h4>
+                        <div class="code-block">
+&lt;table class="table-layout" style="width: 90%; margin: 0 auto;"&gt;
+    &lt;tr&gt;
+        &lt;td colspan="3" class="header-cell"&gt;
+            &lt;h3&gt;Хедер сайту&lt;/h3&gt;
+            &lt;p&gt;Гумова таблична верстка (90%)&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td style="width: 20%; background-color: #e8f4fc; padding: 20px;"&gt;
+            &lt;h4&gt;Ліва колонка&lt;/h4&gt;
+            &lt;p&gt;Контент лівої колонки&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style="background-color: #f0f0f0; padding: 20px;"&gt;
+            &lt;h4&gt;Центральна колонка&lt;/h4&gt;
+            &lt;p&gt;Основний контент сайту&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style="background-color: #f0f0f0; padding: 20px;"&gt;
+            &lt;h4&gt;Права колонка&lt;/h4&gt;
+            &lt;p&gt;Додатковий контент&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="3" class="footer-cell"&gt;
+            &lt;p&gt;Футер сайту © 2025&lt;/p&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab3-task2-2" class="lab-section">
+                    <h2 class="section-title">Завдання 2.2: Блокова верстка</h2>
+                    
+                    <div class="content-card">
+                        <h3>Розмітка за допомогою блоків (плаваючих елементів)</h3>
+                        <p><strong>Варіант:</strong> 2</p>
+                        <div class="screenshot-placeholder">
+                            <img src="pictures/lab3.4.jpg" alt="Варіант 1">
+                        </div>
+                        <h4>Фіксована блокова верстка (ширина 960px):</h4>
+                        <div class="layout-demo">
+                            <div class="block-layout" style="width: 960px; margin: 0 auto;">
+                                <div class="block-header">
+                                    <h3>Хедер сайту</h3>
+                                    <p>Фіксована блокова верстка (960px)</p>
+                                </div>
+                                
+                                <div class="block-container">
+                                    <div class="block-left">
+                                        <h4>Лівий блок</h4>
+                                        <p>Бокова панель</p>
+                                    </div>
+                                    
+                                    <div class="block-right">
+                                        <div class="block-top">
+                                            <h4>Верхній правий блок</h4>
+                                            <p>Горизонтальний блок ближче до верху</p>
+                                        </div>
+                                        
+                                        <div class="block-columns">
+                                            <div class="block-col">
+                                                <h4>Права колонка 1</h4>
+                                                <p>Перша колонка знизу</p>
+                                            </div>
+                                            <div class="block-col">
+                                                <h4>Права колонка 2</h4>
+                                                <p>Друга колонка знизу</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="block-footer">
+                                    <p>Футер сайту © 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>HTML-код фіксованої блокової верстки:</h4>
+                        <div class="code-block">
+&lt;div class="block-layout" style="width: 960px; margin: 0 auto;"&gt;
+    &lt;div class="block-header"&gt;
+        &lt;h3&gt;Хедер сайту&lt;/h3&gt;
+        &lt;p&gt;Фіксована блокова верстка (960px)&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="block-container"&gt;
+        &lt;div class="block-left"&gt;
+            &lt;h4&gt;Малий лівий блок&lt;/h4&gt;
+            &lt;p&gt;Бокова панель&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="block-right"&gt;
+            &lt;div class="block-top"&gt;
+                &lt;h4&gt;Верхній правий блок&lt;/h4&gt;
+                &lt;p&gt;Горизонтальний блок ближче до верху&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="block-columns"&gt;
+                &lt;div class="block-col"&gt;
+                    &lt;h4&gt;Права колонка 1&lt;/h4&gt;
+                    &lt;p&gt;Перша колонка знизу&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="block-col"&gt;
+                    &lt;h4&gt;Права колонка 2&lt;/h4&gt;
+                    &lt;p&gt;Друга колонка знизу&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="block-footer"&gt;
+        &lt;p&gt;Футер сайту © 2025&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </div>
+                        
+                        <h4>Гумова блокова верстка (ширина 90%):</h4>
+                        <div class="layout-demo">
+                            <div class="block-layout" style="width: 90%; margin: 0 auto;">
+                                <div class="block-header">
+                                    <h3>Хедер сайту</h3>
+                                    <p>Гумова блокова верстка (90%)</p>
+                                </div>
+                                
+                                <div class="block-container">
+                                    <div class="block-left">
+                                        <h4>Лівий блок</h4>
+                                        <p>Бокова панель</p>
+                                    </div>
+                                    
+                                    <div class="block-right">
+                                        <div class="block-top">
+                                            <h4>Верхній правий блок</h4>
+                                            <p>Горизонтальний блок ближче до верху</p>
+                                        </div>
+                                        
+                                        <div class="block-columns">
+                                            <div class="block-col">
+                                                <h4>Права колонка 1</h4>
+                                                <p>Перша колонка знизу</p>
+                                            </div>
+                                            <div class="block-col">
+                                                <h4>Права колонка 2</h4>
+                                                <p>Друга колонка знизу</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="block-footer">
+                                    <p>Футер сайту © 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>HTML-код гумової блокової верстки:</h4>
+                        <div class="code-block">
+&lt;div class="block-layout" style="width: 90%; margin: 0 auto;"&gt;
+    &lt;div class="block-header"&gt;
+        &lt;h3&gt;Хедер сайту&lt;/h3&gt;
+        &lt;p&gt;Гумова блокова верстка (90%)&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="block-container"&gt;
+        &lt;div class="block-left"&gt;
+            &lt;h4&gt;Малий лівий блок&lt;/h4&gt;
+            &lt;p&gt;Бокова панель&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="block-right"&gt;
+            &lt;div class="block-top"&gt;
+                &lt;h4&gt;Верхній правий блок&lt;/h4&gt;
+                &lt;p&gt;Горизонтальний блок ближче до верху&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="block-columns"&gt;
+                &lt;div class="block-col"&gt;
+                    &lt;h4&gt;Права колонка 1&lt;/h4&gt;
+                    &lt;p&gt;Перша колонка знизу&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="block-col"&gt;
+                    &lt;h4&gt;Права колонка 2&lt;/h4&gt;
+                    &lt;p&gt;Друга колонка знизу&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="block-footer"&gt;
+        &lt;p&gt;Футер сайту © 2025&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </div>
+                        
+                        <h4>CSS-код для блокової верстки:</h4>
+                        <div class="code-block">
+.block-layout {
+    background: white;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.block-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.block-container {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.block-left {
+    float: left;
+    width: 200px;
+    background-color: #e8f4fc;
+    padding: 15px;
+    margin-right: 15px;
+    min-height: 150px;
+}
+
+.block-right {
+    overflow: hidden;
+}
+
+.block-top {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.block-columns {
+    overflow: hidden;
+}
+
+.block-col {
+    float: left;
+    width: 48%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    min-height: 120px;
+}
+
+.block-col:first-child {
+    margin-right: 4%;
+}
+
+.block-footer {
+    clear: both;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Адаптивність для блокової верстки */
+@media (max-width: 768px) {
+    .block-left {
+        float: none;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .block-col {
+        float: none;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .block-col:first-child {
+        margin-right: 0;
+    }
+}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab3-task3" class="lab-section">
+                    <h2 class="section-title">Завдання 3: Flexbox верстка</h2>
+                    
+                    <div class="content-card">
+                        <h3>Реалізація варіанту за допомогою Flexbox</h3>
+                        <strong>Варіант (остання цифра 2):</strong>
+                        
+                        <div class="java-course">
+                            <h3>Професія Java-розробник</h3>
+                            
+                            <div class="course-features">
+                                <div class="feature">
+                                    <h4>Портфоліо для старту кар'єри</h4>
+                                </div>
+                                <div class="feature">
+                                    <h4>Навчання на реальних кейсах</h4>
+                                </div>
+                                <div class="feature">
+                                    <h4>Заробіток після 4 місяців навчання</h4>
+                                </div>
+                                <div class="feature">
+                                    <h4>Можна працювати віддалено</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="learning-steps">
+                                <h4>Як проходить навчання</h4>
+                                
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div>
+                                        <h5>Дивіться відеолекції</h5>
+                                        <p>Лічильні відео з аргументами ілюстративними емоцій.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div>
+                                        <h5>Робите завдання і відправляєте на перевірку</h5>
+                                        <p>Послідовити не менше, вибирайте аргументний режим навчання.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div>
+                                        <h5>Чи отримуєте розбір вашої роботи</h5>
+                                        <p>Опис курсового розроблення та теорії навчання 1 разу в тиждень.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div>
+                                        <h5>Чи працюєте над помилками</h5>
+                                        <p>Проводити інтерпретацію ще раз, щоб переконливості, що в цей раз все справляється.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="levels">
+                                <h4>Рівні навчання</h4>
+                                
+                                <div class="level">
+                                    <h5>Перший рівень: чітка і зрозуміла теорія</h5>
+                                    <p>За 4 місяці вам необхідно буде пройти 16 тем. Ви самостійно вивчіть базові навички, з якими зможете створювати справжні проекти. Ви створите дипломний проект - діапазон блогу в веб-інтерфейсі. Захист проекту проходить у відкритому режимі - на нашому майданчику або по відеозв'язку.</p>
+                                </div>
+                                
+                                <div class="level">
+                                    <h5>Другий рівень: інтенсивна практика</h5>
+                                    <p>Під керівництвом наставника ви в складі команди створите власну соціальну мережу. Фактично це частина програми прирівнюється до стажування. Вам видадуть ТЗ і дизайн проекту. Всі процеси, через які ви пройдете, - це максимально наближений до обов'язку умов досвід. Саме так створюється комерційне програмне забезпечення в фірмах-роботодавців.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>CSS-код для Flexbox верстки:</h4>
+                        <div class="code-block">
+.course-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.feature {
+    flex: 1;
+    min-width: 200px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #4a6491;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #4a6491;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lab3-conclusions" class="lab-section">
+                    <h2 class="section-title">Висновки до лабораторної роботи №3</h2>
+                    
+                    <div class="conclusion-box">
+                        <h3>Висновки</h3>
+                        
+                        <p>Під час виконання лабораторної роботи №3 було успішно освоєно роботу з різними типами верстки веб-сторінок: табличною, блоковою (з використанням плаваючих елементів) та сучасною версткою за допомогою Flexbox.</p>
+                        
+                        <p>Ключові навички, отримані в ході роботи:</p>
+                        
+                        <ol>
+                            <li><strong>Таблична верстка:</strong> Навчилась створювати макети веб-сторінок за допомогою HTML-таблиць, реалізувала як фіксовану (з заданою шириною), так і гумову (респонсивну) табличну верстку.</li>
+                            
+                            <li><strong>Блокова верстка:</strong> Опанувала техніки верстки з використанням плаваючих елементів (float), що дозволяє створювати складні багатоколонкові макети. Реалізувала адаптивність блокової верстки за допомогою медіа-запитів.</li>
+                            
+                            <li><strong>Flexbox верстка:</strong> Застосувала сучасну технологію CSS Flexbox для створення гнучких та адаптивних макетів. Flexbox дозволяє легко керувати розташуванням, розмірами та порядком елементів на сторінці.</li>
+                            
+                            <li><strong>Адаптивна верстка:</strong> Реалізувала адаптивність для всіх типів верстки за допомогою медіа-запитів та метатегу viewport, що забезпечує коректне відображення на різних пристроях.</li>
+                            
+                            <li><strong>Порівняльний аналіз:</strong> З'ясувала переваги та недоліки різних типів верстки. Таблична верстка проста, але негнучка та малопридатна для адаптивності. Блокова верстка з float більш гнучка, але вимагає додаткових зусиль для очищення потоків. Flexbox верстка є найсучаснішим та найгнучкішим підходом.</li>
+                        </ol>
+                        
+                        <p><strong>Загальний висновок:</strong> Виконання лабораторної роботи №3 дозволило отримати практичні навички роботи з основними типами верстки веб-сторінок. Отриманий досвід дозволяє обґрунтовано вибирати підхід до верстки залежно від конкретних вимог проекту. Сучасні технології, такі як Flexbox, надають розробникам потужні інструменти для створення складних, адаптивних та підтримуваних макетів.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
